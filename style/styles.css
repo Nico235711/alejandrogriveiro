@@ -514,11 +514,9 @@ footer {
     max-width: 300px;
     transition: right 0.3s ease-in-out;
     position: fixed;
-    top: 60px;
-    height: calc(100vh - 60px);
+    top: 0;
     background-color: white;
     z-index: 100;
-    padding-bottom: 20px;
   }
 
   .cart-sidebar.open {
