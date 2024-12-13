@@ -1,3 +1,6 @@
+const MAX_ITEMS = 5;
+const MIN_ITEMS = 1;
+
 // Navbar functionality
 const navSlide = () => {
   const burger = document.querySelector(".burger");
@@ -93,8 +96,10 @@ function updateCart() {
 cartItems.addEventListener("click", (e) => {
   if (e.target.classList.contains("increase-quantity")) {
     const index = e.target.getAttribute("data-index");
-    cart[index].quantity++;
-    updateCart();
+    if (cart[index].quantity < MAX_ITEMS) {
+      cart[index].quantity++;
+      updateCart();
+    }
   } else if (e.target.classList.contains("decrease-quantity")) {
     const index = e.target.getAttribute("data-index");
     if (cart[index].quantity > 1) {
